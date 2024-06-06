@@ -1,0 +1,12 @@
+python scripts/train.py \
+--model transvae \
+--data_source custom \
+--train_mols_path data/train.txt \
+--test_mols_path data/test.txt \
+--vocab_path data/char_dict.pkl \
+--char_weights_path data/char_weights.npy \
+--property_predictor \
+--train_props_path data/train_qed.txt \
+--test_props_path data/test_qed.txt \
+--epochs 100 \
+--save_name checkpoints/transvae_prop
