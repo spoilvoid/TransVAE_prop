@@ -37,7 +37,7 @@ If your CUDA capability ${config_name} is not compatible with the current PyTorc
 
  `python setup.py develop`
 
- If some large files isn't dowmloaded, please check your git lfs installation or mannually download it by yourself.
+ If some large files isn't downloaded, please check your git or mannually download it by yourself.
  
 ## Training for Property Prediction
 
@@ -57,7 +57,7 @@ In above command, `--data_source` can choose $zinc$ or $pubchem$. In `./data` fo
 
  `python scripts/train.py --model transvae --property_predictor --data_source custom --train_mols_path ${mols_train_filename}.txt --test_mols_path ${mols_test_filename}.txt --vocab_path ${my_vocab}.pkl --char_weights_path ${my_char_weights}.npy --train_props_path ${train_property_filename}.txt --test_props_path ${test_property_filename}.txt --save_name ${my_props_model}`
 
-The DEFAULT data directory is `./data`. And the vocabulary must be a pickle file that stores a dictionary that maps token -> tokenid and it must begin with the `<start>` or `<bos>` token. All modifiable hyperparameters can be viewed with `python scripts/train.py --help`. The above command need a GPU to train the model.
+The DEFAULT data directory is `./data`. And the vocabulary must be a pickle file that stores a dictionary that maps token -> tokenid and it must begin with the `<start>` or `<bos>` token. All modifiable hyperparameters can be viewed with `python scripts/train.py --help`. The above command need a GPU to train the model or just run in cpu (but quite slower).
 
 If you have trained for several epochs and want to resume from ckpt to continue training, you can achieve it by specifying the args `--checkpoint ${ckpt_path}`. Because .ckpt file has recorded the epoch information, your start epoch will be `ckpt['epoch']`.
 
